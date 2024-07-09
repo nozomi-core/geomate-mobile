@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/resource/local_string.dart';
-import 'package:mobile/resource/strings.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,10 +10,22 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginState extends State<LoginScreen> {
+  final _editControl = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(Resource.get(Strings.title)),
+      body: Column(children: [
+        TextField(
+          controller: _editControl,
+          decoration: const InputDecoration.collapsed(hintText: "Username")
+        ),
+        TextButton(
+            onPressed: () => {
+              debugPrint("pressed: ${_editControl.text}")
+            },
+            child: Text("Login"))
+      ]),
     );
   }
 }
