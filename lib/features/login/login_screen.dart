@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/strings/strings.dart';
-
-import '../../strings/local_string.dart';
+import 'package:mobile/resource/local_string.dart';
+import 'package:mobile/resource/strings.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

@@ -1,4 +1,4 @@
-import 'package:mobile/strings/strings.dart';
+import 'package:mobile/resource/strings.dart';
 
 class Resource {
   static String get(Strings name) {
