@@ -1,4 +1,3 @@
-
 import 'package:mobile/strings/strings.dart';
 
 class Resource {
