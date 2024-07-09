@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/features/login/login_screen.dart';
 import 'package:mobile/routes.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
-  runApp(const MyApp());
+  //Loads selected .env mode file from the CLI config
+  const environmentMode = String.fromEnvironment('MODE', defaultValue: 'development');
+  dotenv.load(fileName: ".env.$environmentMode").then((value) {
+      runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
