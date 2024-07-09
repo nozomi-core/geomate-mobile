@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:mobile/di/services.dart';
 import 'package:mobile/features/home/home_screen.dart';
 import 'package:mobile/features/login/login_screen.dart';
 import 'package:mobile/routes.dart';
@@ -8,6 +10,8 @@ void main() {
   //Loads selected .env mode file from the CLI config
   const environmentMode = String.fromEnvironment('MODE', defaultValue: 'development');
   dotenv.load(fileName: ".env.$environmentMode").then((value) {
+      setupServiceModule(GetIt.instance);
+
       runApp(const MyApp());
   });
 }
