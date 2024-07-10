@@ -1,4 +1,3 @@
-
 import 'package:mobile/core/services/auth/auth_response.dart';
 
 abstract class AuthService {
