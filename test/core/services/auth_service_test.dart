@@ -9,5 +9,13 @@ void main() {
 
     final response = await auth.loginWithPassword(MockVar.username, MockVar.password);
     expect(response.getOrNull()?.userId, testUserId);
+    expect(auth.getUserId(), testUserId);
+    auth.signOut();
+  });
+
+  test("test sign out", () async {
+    await auth.loginWithPassword(MockVar.username, MockVar.password);
+    auth.signOut();
+    expect(auth.getUserId(), null);
   });
 }

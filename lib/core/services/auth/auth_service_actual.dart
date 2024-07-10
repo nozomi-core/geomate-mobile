@@ -19,4 +19,20 @@ class AuthServiceActual implements AuthService {
       return Failure(FailureReason.illegal_argument, null);
     }
   }
+
+  @override
+  Future signOut() async {
+    pocket.authStore.clear();
+  }
+
+  @override
+  String? getUserId() {
+    final authModel = pocket.authStore.model;
+
+    if(authModel is RecordModel) {
+      return authModel.id;
+    } else {
+      return null;
+    }
+  }
 }
