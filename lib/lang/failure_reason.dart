@@ -1,0 +1,4 @@
+enum FailureReason {
+ undefined,
+ isNull
+}
