@@ -1,3 +1,4 @@
+import 'package:mobile/core/model/gallery/gallery_repository_actual.dart';
 import 'package:mobile/core/services/auth/auth_service_actual.dart';
 import 'package:pocketbase/pocketbase.dart';
 
@@ -10,4 +11,8 @@ class MockVar {
 
 class MockService {
   static final authService = AuthServiceActual(pocket);
+}
+
+class MockRepo {
+  static final galleryRepo = GalleryRepositoryActual(pocket);
 }
