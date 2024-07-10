@@ -1,6 +1,13 @@
 import 'package:mobile/lang/failure_reason.dart';
 
 sealed class Maybe<T> {
+  T? getOrNull() {
+    switch(this) {
+      case Success(): return (this as Success).value;
+      case Failure(): return null;
+    }
+  }
+
   Maybe<T> onSuccess(Function(T value) callback) {
     if(this is Success) {
       final value = (this as Success).value;
@@ -31,7 +38,7 @@ class Success<T> extends Maybe<T> {
   Success(this.value);
 }
 
-class Failure extends Maybe {
+class Failure<T> extends Maybe<T> {
   final Exception? exception;
   final FailureReason reason;
 

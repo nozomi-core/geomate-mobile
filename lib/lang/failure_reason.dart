@@ -1,4 +1,5 @@
 enum FailureReason {
  undefined,
- isNull
+ isNull,
+ illegal_argument
 }
